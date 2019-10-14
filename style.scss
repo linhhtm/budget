@@ -1,0 +1,155 @@
+$main_green: #5fcbcb;
+$main_red: #f75e62;
+.background {
+    background-image: url('./back.png');
+    width: 100%;
+    height:300px;
+    z-index: 0;
+    position: relative;
+    .budget_title{
+        padding-top:50px;
+        width: 100%;
+        font-size: 20px;
+        height: initial;
+        position: absolute;
+        z-index: 9999;
+        p{
+            color:white;
+        }
+        p.budget{
+            font-size:40px;
+            font-weight: 100;
+        }
+    }
+    .budget_card{
+        width:300px;
+        position: absolute;
+        left:50%;
+        bottom:5%;
+        transform: translate(-50%,0%);
+        z-index: 99999;
+        .income{
+            background-color:$main_green;
+            margin-bottom:15px;
+        }
+        .expenses{
+            background-color:$main_red;
+        }
+        .income,.expenses{
+            padding:10px;
+            height: 50px;
+            text-transform: uppercase;
+
+            .type_right{
+                width:100%;
+                display: flex;
+                justify-content: flex-end;
+                color:white;
+                .budget{
+                    font-size:17px;
+                    font-weight: 500;
+                    margin-right:5px;
+                    margin-bottom: 0px;
+                }
+                .percent{
+                    background-color:rgba($color: #ffffff, $alpha: 0.4);
+                    border-radius: 3px;
+                    font-size: 12px;
+                    height: 22px;
+                    width: 41px;
+                    padding: 2px;
+                    text-align: center;
+                    margin-top:2px;
+                }
+            }
+            .type{
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+}
+.background::after{
+    content:'';
+    width:100%;
+    height: 100%;
+    position: absolute;
+    background-color:rgba($color: #000000, $alpha: 0.4);
+    z-index: 1;
+}
+.select{
+    justify-content: center;
+    align-items: center;
+    background-color:#efefef;
+    padding:3px 0px 3px 0;
+    .form-group{
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
+    #select_type{
+        width:60px;
+    }
+}
+.table{
+    padding: 50px 150px;
+    display: flex;
+    .head{
+        font-size:20px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 10px;
+        font-weight: 400;
+    }
+    .income_table{
+        color:$main_green;
+        font-weight: 300;
+        .budget{
+            color:$main_green;
+        }
+    }
+    .expenses_table{
+        color:$main_red;
+        font-weight: 300;
+        .budget{
+            color:$main_red;
+        }
+    }
+    .line{
+        font-size: 20px;
+        border-bottom: 1px solid #efefef;
+        margin-top:10px;
+        .description{
+            width:100%;
+            color:black;
+        }
+        .budget{
+            display: flex;
+            text-align: right;
+            
+        }
+        .remove{
+            width:30px;
+            height: 35px;
+            font-weight: 500;
+            opacity: 0;
+            transition: 0.5s;
+            border-radius: 50%;
+            margin-left:5px;
+            align-items: center;
+            border:2px solid;
+            text-align: center;
+            background-color: inherit;
+            color: inherit;
+        }
+        
+        .budget:hover + .remove , .remove:hover {
+            color:inherit;
+            transition: 0.5s;        
+            opacity: 1;
+            cursor: pointer;
+        }
+        
+    }
+}
